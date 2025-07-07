@@ -28,7 +28,7 @@ function Authorization(permission) {
         if (!roleObj) {
             return res.status(403).json({ error: 'Role not found' });
         }
-        // If no permission required, allow all authenticated users
+        // If no permission required
         if (!permission) return next();
         if (roleObj.permissions.includes(permission)) {
             return next();
